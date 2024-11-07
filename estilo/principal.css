@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url("../imagenes/parque2.jpg");
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen de fondo no se mueva al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Hace que el body tenga el tamaño completo de la pantalla */
+    flex-direction: column; /* Para que los elementos se apilen verticalmente */
+    
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #fafafa;
+
+}
+
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilos para el menú sticky */
+.menu {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.sound-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.sound-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* */
+#heartContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfiera con los elementos en la página */
+    overflow: hidden;
+    z-index: -1; /* Ponerlo detrás de otros elementos */
+}
+
+/* Estilo para cada corazón */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Forma del corazón usando bordes */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+/* Posicionamiento de los pseudo-elementos para formar el corazón */
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Animación de caída */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+
+/* Estilo general del footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    color: #fafafa; /* Color claro para el texto */
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    width: 100%;
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0;
+    left: 0;
+    z-index: 10; /* Asegura que el footer esté visible sobre el fondo */
+}
+
+/* Márgenes y espaciado */
+footer p {
+    margin: 8px 0;
+}
